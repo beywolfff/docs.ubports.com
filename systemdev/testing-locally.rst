@@ -127,8 +127,8 @@ In both cases the chroot will be created by running the following command::
 
 A chroot for cross-building arm64 packages on an amd64 host can e.g. be created under the directory ``/srv/chroot/ubports-${distro}-arm64`` using::
 
-    chroot_base=/srv/chroot/ubports-${distro}-arm64
-    sudo sbuild-createchroot --arch=arm64 --components=main,restricted,universe --extra-repository="deb http://ports.ubuntu.com/ubuntu-ports/ ${chroot_distro}-updates main restricted universe" --include=ccache "${chroot_distro}" "${chroot_base}" http://archive.ubuntu.com/ubuntu/
+    chroot_base=/srv/chroot/ubports-${chroot_distro}-arm64
+    sudo sbuild-createchroot --arch=arm64 --components=main,restricted,universe --extra-repository="deb http://ports.ubuntu.com/ubuntu-ports/ ${chroot_distro}-updates main restricted universe" --include=ccache "${chroot_distro}" "${chroot_base}" http://ports.ubuntu.com/ubuntu-ports/
 
 For cross-building armhf packages the above command can be used with ``arm64`` changed to ``armhf``.
 
